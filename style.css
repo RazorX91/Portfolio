@@ -709,7 +709,7 @@ footer {
     .profile-card-wrapper { width: 280px; height: 360px; }
     
     .hero-text p { margin-left: auto; margin-right: auto; }
-    .hero-buttons { display: flex; justify-content: center; gap: 10px; }
+    .hero-buttons { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
     .btn { margin: 0; padding: 10px 20px; font-size: 0.9rem;}
     
     .hamburger { display: block; }
@@ -730,4 +730,27 @@ footer {
     .nav-links.active { left: 0; }
     .nav-links a { font-size: 1.5rem; }
     .contact-item { width: 100%; justify-content: center;}
+}
+
+@media (max-width: 480px) {
+    .section-title { font-size: 2rem; margin-bottom: 2.5rem; }
+    .hero-text h1 { font-size: 2.4rem; }
+    .typing-text { font-size: 1.5rem; }
+    
+    .profile-card-wrapper { 
+        width: 100%; 
+        max-width: 260px; 
+        height: 340px; 
+    }
+    .floating-badge { width: 45px; height: 45px; font-size: 1.2rem; }
+    
+    .about, .skills, .projects { padding: 60px 0; }
+    footer { padding: 60px 0 30px; }
+    
+    .contact-item { padding: 12px 15px; flex-direction: column; text-align: center; }
+    .contact-text strong { font-size: 0.9rem; }
+    
+    /* Make glowing orbs smaller on mobile to avoid overflow */
+    .orb-1 { width: 200px; height: 200px; }
+    .orb-2 { width: 250px; height: 250px; }
 }

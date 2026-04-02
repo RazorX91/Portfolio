@@ -19,11 +19,14 @@
     scroll-behavior: smooth;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
-    overflow-x: hidden;
     position: relative;
 }
 
@@ -440,7 +443,7 @@ a { text-decoration: none; color: var(--text-color); transition: 0.3s; }
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
     gap: 25px;
 }
 
@@ -507,7 +510,7 @@ a { text-decoration: none; color: var(--text-color); transition: 0.3s; }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
     gap: 35px;
 }
 
@@ -695,15 +698,17 @@ footer {
 
 /* Responsive */
 @media (max-width: 900px) {
-    .about-content { grid-template-columns: 1fr; }
+    .about-content { grid-template-columns: 1fr; gap: 40px; }
     .hero-text h1 { font-size: 3.2rem; }
 }
 
 @media (max-width: 768px) {
+    .navbar { padding: 15px 0; }
     .hero-container {
         flex-direction: column-reverse;
         text-align: center;
         padding-top: 60px;
+        gap: 30px;
     }
     
     .profile-card-wrapper { width: 280px; height: 360px; }
@@ -716,10 +721,10 @@ footer {
     
     .nav-links {
         position: fixed;
-        top: 75px;
+        top: 65px;
         left: -100%;
         width: 100%;
-        height: calc(100vh - 75px);
+        height: calc(100vh - 65px);
         background: var(--bg-color-alt);
         flex-direction: column;
         align-items: center;
@@ -743,6 +748,9 @@ footer {
         height: 340px; 
     }
     .floating-badge { width: 45px; height: 45px; font-size: 1.2rem; }
+    .badge-1 { left: -10px; top: 10px; }
+    .badge-2 { right: -10px; bottom: 40px; }
+    .badge-3 { left: 20px; bottom: -5px; }
     
     .about, .skills, .projects { padding: 60px 0; }
     footer { padding: 60px 0 30px; }
